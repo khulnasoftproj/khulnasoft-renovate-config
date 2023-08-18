@@ -1,0 +1,20 @@
+{
+   "regexManagers": [
+      {
+         "datasourceTemplate": "github-releases",
+         "depNameTemplate": "kubernetes-sigs/kustomize",
+         "extractVersionTemplate": "^kustomize/(?<version>.*)$",
+         "fileMatch": [
+            "{{arg0}}"
+         ],
+         "matchStrings": [
+            " +(?:version|'version'|\"version\") *: +kustomize/(?<currentValue>[^'\" \\n]+) +# renovate: depName=kubernetes-sigs/kustomize[ \\n]",
+            " +(?:version|'version'|\"version\") *: +'kustomize/(?<currentValue>[^'\" \\n]+)' +# renovate: depName=kubernetes-sigs/kustomize[ \\n]",
+            " +(?:version|'version'|\"version\") *: +\"kustomize/(?<currentValue>[^'\" \\n]+)\" +# renovate: depName=kubernetes-sigs/kustomize[ \\n]",
+            " +(?:name|'name'|\"name\") *: +kubernetes-sigs/kustomize@kustomize/(?<currentValue>[^'\" \\n]+)",
+            " +(?:name|'name'|\"name\") *: +'kubernetes-sigs/kustomize@kustomize/(?<currentValue>[^'\" \\n]+)'",
+            " +(?:name|'name'|\"name\") *: +\"kubernetes-sigs/kustomize@kustomize/(?<currentValue>[^'\" \\n]+)\""
+         ]
+      }
+   ]
+}

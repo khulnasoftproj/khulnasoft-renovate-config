@@ -1,0 +1,26 @@
+{
+   "regexManagers": [
+      {
+         "datasourceTemplate": "github-releases",
+         "depNameTemplate": "khulnasoftproj/khulnasoft-installer",
+         "fileMatch": [
+            "{{arg0}}"
+         ],
+         "matchStrings": [
+            "raw\\.githubusercontent\\.com/khulnasoftproj/khulnasoft-installer/(?<currentValue>[^'\" \\n]+)/khulnasoft-installer"
+         ]
+      },
+      {
+         "datasourceTemplate": "github-releases",
+         "depNameTemplate": "khulnasoftproj/khulnasoft",
+         "fileMatch": [
+            "{{arg0}}"
+         ],
+         "matchStrings": [
+            "khulnasoft-installer +(\\| +(ba|z)?sh +-s +-- +)?(-i +\\S+ +)?-v +(?<currentValue>[^'\" \\n]+)\\s",
+            "khulnasoft-installer +(\\| +(ba|z)?sh +-s +-- +)?(-i +\\S+ +)?-v +'(?<currentValue>[^'\" \\n]+)'\\s",
+            "khulnasoft-installer +(\\| +(ba|z)?sh +-s +-- +)?(-i +\\S+ +)?-v +\"(?<currentValue>[^'\" \\n]+)\"\\s"
+         ]
+      }
+   ]
+}

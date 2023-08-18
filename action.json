@@ -1,0 +1,12 @@
+{
+  "regexManagers": [
+    {
+      "fileMatch": ["^\\.github/.*\\.ya?ml$"],
+      "matchStrings": [
+        " +['\"]?khulnasoft_version['\"]? *: +['\"]?(?<currentValue>[^'\" \\n]+)['\"]?"
+      ],
+      "depNameTemplate": "khulnasoftproj/khulnasoft",
+      "datasourceTemplate": "github-releases"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  extends: [
+    "config:base",
+    "helpers:pinGitHubActionDigests",
+    "github>khulnasoftproj/khulnasoft-renovate-config#1.8.0",
+  ],
+  automerge: true,
+  platformAutomerge: true,
+  prHourlyLimit: 0,
+  prConcurrentLimit: 0,
+  branchConcurrentLimit: 0,
+  regexManagers: [
+    {
+      fileMatch: ["README\\.md"],
+      matchStrings: [
+        "(version|ref): \"?(?<currentValue>.*)\"? +# renovate: depName=(?<depName>.*)"
+      ],
+      datasourceTemplate: "github-releases",
+    },
+    {
+      fileMatch: ["README\\.md"],
+      "matchStrings": [
+        "\"github>khulnasoftproj/khulnasoft-renovate-config#(?<currentValue>[^\" \\n\\(]+)",
+        "\"github>khulnasoftproj/khulnasoft-renovate-config:.*#(?<currentValue>[^\" \\n\\(]+)",
+        "\"github>khulnasoftproj/khulnasoft-renovate-config/.*#(?<currentValue>[^\" \\n\\(]+)"
+      ],
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "khulnasoftproj/khulnasoft-renovate-config"
+    },
+    {
+      fileMatch: ["README\\.md"],
+      "matchStrings": [
+        " +['\"]?khulnasoft_version['\"]? *: +['\"]?(?<currentValue>[^'\" \\n]+)['\"]?"
+      ],
+      "depNameTemplate": "khulnasoftproj/khulnasoft",
+      "datasourceTemplate": "github-releases"
+    },
+    {
+      fileMatch: ["README\\.md"],
+      "matchStrings": [
+        "raw\\.githubusercontent\\.com/khulnasoftproj/khulnasoft-installer/(?<currentValue>.*?)/khulnasoft-installer"
+      ],
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "khulnasoftproj/khulnasoft-installer"
+    }
+  ]
+}
